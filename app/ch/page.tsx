@@ -53,9 +53,7 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
   try {
     const res = await fetch('/api/contact', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),
     });
 
@@ -69,14 +67,14 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
       return;
     }
 
-    console.log('[Contatto DSService salvato]', data);
     alert('Grazie! Ti ricontatteremo al più presto.');
     setForm(emptyForm);
-  } catch (error) {
-    console.error('[Contatto DSService] errore:', error);
+  } catch (err) {
+    console.error('[Contatto DSService] errore:', err);
     alert('Errore di connessione al server. Controlla la rete e riprova.');
   }
 };
+
 
 
 
