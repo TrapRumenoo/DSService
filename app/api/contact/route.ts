@@ -1,60 +1,87 @@
+import pg from 'pg';
 import { NextResponse } from 'next/server';
-import { Pool } from 'pg';
+
+const { Pool } = pg;
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
-export async function POST(request: Request) {
+export async function GET() {
+  const client = await pool.connect();
+
   try {
-    const body = await request.json();
-
-    const {
-      firstName,
-      lastName,
-      phone,
-      email,
-      message,
-      marketing,
-    } = body;
-
-    if (!firstName || !lastName || !email || !message) {
-      return NextResponse.json(
-        { error: 'Campi obbligatori mancanti' },
-        { status: 400 },
-      );
-    }
-
-    const client = await pool.connect();
-    try {
-      const text = `
-        INSERT INTO contacts
-          (first_name, last_name, phone, email, message, marketing, created_at)
-        VALUES
-          ($1, $2, $3, $4, $5, $6, NOW())
-        RETURNING id
-      `;
-      const values = [
-        firstName,
-        lastName,
-        phone || null,
+    const result = await client.query(
+      `
+      SELECT
+        id,
+        first_name,
+        last_name,
+        phone,
         email,
         message,
-        Boolean(marketing),
-      ];
+        marketing,
+        created_at
+      FROM contacts
+      ORDER BY created_at DESC
+      `,
+    );
 
-      const result = await client.query(text, values); // query parametrizzata[web:101]
-      const insertedId = result.rows[0]?.id;
+    const rows = result.rows;
 
-      return NextResponse.json({ ok: true, id: insertedId }, { status: 201 });
-    } finally {
-      client.release();
+    const header = [
+      'id',
+      'first_name',
+      'last_name',
+      'phone',
+      'email',
+      'message',
+      'marketing',
+      'created_at',
+    ];
+
+    const escapeCsv = (value: unknown): string => {
+      if (value === null || value === undefined) return '';
+      const s = String(value);
+      if (s.includes('"') || s.includes(',') || s.includes('\n') || s.includes('\r')) {
+        return `"${s.replace(/"/g, '""')}"`;
+      }
+      return s;
+    };
+
+    const lines: string[] = [];
+    lines.push(header.join(','));
+
+    for (const row of rows) {
+      const line = [
+        escapeCsv(row.id),
+        escapeCsv(row.first_name),
+        escapeCsv(row.last_name),
+        escapeCsv(row.phone),
+        escapeCsv(row.email),
+        escapeCsv(row.message),
+        escapeCsv(row.marketing),
+        escapeCsv(row.created_at),
+      ].join(',');
+      lines.push(line);
     }
+
+    const csv = lines.join('\r\n');
+
+    return new NextResponse(csv, {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/csv; charset=utf-8',
+        'Content-Disposition': 'attachment; filename="contacts.csv"',
+      },
+    });
   } catch (error) {
-    console.error('Error saving contact:', error);
+    console.error('Errore export contatti:', error);
     return NextResponse.json(
-      { error: 'Errore interno server' },
+      { error: 'Errore durante l\'export dei contatti' },
       { status: 500 },
     );
+  } finally {
+    client.release();
   }
 }
