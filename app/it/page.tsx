@@ -177,27 +177,6 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
         </div>
       </section>
 
-      {/* CAROSELLO FOTO PLACEHOLDER */}
-      <section className="border-b border-[#171a1d] bg-[#050507] py-4">
-        <div className="relative mx-auto max-w-6xl overflow-hidden px-4">
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#050507] via-transparent to-[#050507]" />
-          <div className="flex gap-4 animate-scrollRow opacity-60">
-            {[1, 2, 3, 4].map(n => (
-              <div
-                key={n}
-                className="h-32 w-64 flex-shrink-0 rounded-xl bg-gradient-to-br from-slate-700 via-slate-600 to-slate-800 shadow-md"
-              />
-            ))}
-            {[1, 2, 3, 4].map(n => (
-              <div
-                key={`dup-${n}`}
-                className="h-32 w-64 flex-shrink-0 rounded-xl bg-gradient-to-br from-slate-700 via-slate-600 to-slate-800 shadow-md"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* SERVIZI */}
       <section
         ref={servicesRef}
@@ -411,10 +390,10 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
         <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <span className="font-semibold text-slate-200">
-              DSService di Mario Rossi
+              DSService di Davide Daniel Sahlean 
             </span>{' '}
-            • Via Esempio 10, 20100 Milano (MI) • P.IVA IT12345678901 •
-            Iscritta al Registro Imprese di Milano, REA MI-1234567
+            • Via Cadorna 381 Lipomo (CO)• P.IVA IT04210660132 •
+            Iscritta al Registro Imprese di Como
           </div>
           <div className="flex flex-wrap gap-3">
             <a href="/privacy" className="hover:text-slate-200">
