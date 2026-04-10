@@ -14,11 +14,11 @@ export default function PrivacyPage() {
         1. Titolare del trattamento
       </h2>
       <p className="mb-4 text-slate-300">
-        Il Titolare del trattamento è <strong>[Ragione sociale completa]</strong>, con sede
-        legale in <strong>[indirizzo completo]</strong>, Partita IVA <strong>[P.IVA]</strong>,
-        iscritta al Registro delle Imprese di <strong>[Camera di Commercio]</strong>,
-        REA <strong>[numero REA]</strong>, contattabile all’indirizzo email{" "}
-        <strong>[email privacy o PEC]</strong> e al numero <strong>[telefono]</strong>.
+        Il Titolare del trattamento è <strong>DSService srl</strong>, con sede
+        legale in <strong>Via Cadorna 381 Lipomo (CO), Italia</strong>, Partita IVA <strong>IT04210660132</strong>,
+        iscritta al Registro delle Imprese di COMO,
+      , contattabile all’indirizzo email{" "}
+        <strong>contatti.dsservice@gmail.com</strong> e al numero <strong>+39 351 358 9621</strong>.
       </p>
 
       <h2 className="text-lg font-semibold mt-8 mb-3 text-slate-200">
@@ -140,7 +140,7 @@ export default function PrivacyPage() {
       </h2>
       <p className="mb-4 text-slate-300">
         Ove nominato, il Responsabile della Protezione dei Dati (DPO) o il referente
-        privacy può essere contattato all’indirizzo <strong>[email DPO/referente]</strong>.
+        privacy può essere contattato all’indirizzo <strong>contatti.dsservice@gmail.com</strong>.
         Elimina o modifica questa sezione se la nomina non è applicabile alla tua società.
       </p>
 
@@ -154,7 +154,7 @@ export default function PrivacyPage() {
       </p>
 
       <p className="mt-8 text-slate-400">
-        Ultimo aggiornamento: [inserire data]
+        Ultimo aggiornamento: 10/04/2026
       </p>
     </main>
   );

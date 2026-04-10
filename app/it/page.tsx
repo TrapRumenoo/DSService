@@ -108,8 +108,8 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
 
           <div className="flex items-center gap-3">
             <div className="hidden flex-col text-[0.65rem] text-slate-300 sm:flex">
-              <span>+39 333 1234567</span>
-              <span>info@dsservice.it</span>
+              <span>+39 351 358 9621</span>
+              <span>contatti.dsservice@gmail.com</span>
             </div>
             <button
               onClick={scrollToContact}

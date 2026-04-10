@@ -11,13 +11,13 @@ export default function NoteLegaliPage() {
       <h2 className="text-lg font-semibold mt-6 mb-3 text-slate-200">Dati della società</h2>
       <ul className="mb-6 list-disc pl-5 text-slate-300">
         <li>
-          <strong>Ragione sociale:</strong> TechSolutions S.r.l. (esempio: sostituisci con la tua)
+          <strong>Ragione sociale:</strong> DSService srl
         </li>
         <li>
-          <strong>Sede legale:</strong> Via Milano 45, 23871 Lomagna (LC), Italia
+          <strong>Sede legale:</strong> Via Cadorna 381 Lipomo (CO)
         </li>
         <li>
-          <strong>Partita IVA:</strong> IT01234567890
+          <strong>Partita IVA:</strong> IT04210660132
         </li>
         <li>
           <strong>REA:</strong> LC‑123456
@@ -29,13 +29,13 @@ export default function NoteLegaliPage() {
           <strong>Capitale sociale:</strong> € 10.000,00 interamente versato (esempio: adatta al tuo valore)
         </li>
         <li>
-          <strong>Contatti:</strong> email@techsolutions.it — Tel. +39 039 1234567
+          <strong>Contatti:</strong> contatti.dsservice@gmail.com — Tel. +39 351 358 9621
         </li>
       </ul>
 
       <h2 className="text-lg font-semibold mt-6 mb-3 text-slate-200">Responsabilità e copyright</h2>
       <p className="mb-3 text-slate-300">
-        Il contenuto del sito (testi, immagini, loghi, software, grafiche) è di proprietà esclusiva di TechSolutions S.r.l. o dei rispettivi proprietari.
+        Il contenuto del sito (testi, immagini, loghi, software, grafiche) è di proprietà esclusiva di DSService srl o dei rispettivi proprietari.
         È vietata la riproduzione, anche parziale, dei contenuti senza autorizzazione scritta del titolare.
       </p>
       <p className="mb-4 text-slate-300">
@@ -44,25 +44,25 @@ export default function NoteLegaliPage() {
 
       <h2 className="text-lg font-semibold mt-6 mb-3 text-slate-200">Svizzera (se applicabile)</h2>
       <p className="mb-3 text-slate-300">
-        In caso di attività in Svizzera, i servizi sono erogati da TechSolutions GmbH (esempio: adatta alla tua realtà) con sede in:
+        In caso di attività in Svizzera, i servizi sono erogati da DSService srl con sede in:
       </p>
       <ul className="mb-4 list-disc pl-5 text-slate-300">
         <li>
-          <strong>Nominativo:</strong> TechSolutions GmbH
+          <strong>Nominativo:</strong> DSService srl
         </li>
         <li>
-          <strong>Sede:</strong> Bahnhofstrasse 1, 8001 Zürich, Svizzera
+          <strong>Sede:</strong> Via Cadorna 381 Lipomo (CO)
         </li>
         <li>
           <strong>CHE‑numero:</strong> CHE‑123.456.789
         </li>
         <li>
-          <strong>Contatti:</strong> info@techsolutions.ch — Tel. +41 44 123 45 67
+          <strong>Contatti:</strong> contatti.dsservice@gmail.com — Tel. +41 78 231 95 56
         </li>
       </ul>
 
       <p className="text-slate-400">
-        © {new Date().getFullYear()} TechSolutions S.r.l. Tutti i diritti riservati. Per informazioni sul trattamento dei dati personali,
+        © {new Date().getFullYear()} DSService srl. Tutti i diritti riservati. Per informazioni sul trattamento dei dati personali,
         si rinvia all’apposita pagina di Privacy Policy.
       </p>
     </main>
